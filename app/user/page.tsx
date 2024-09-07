@@ -1,9 +1,10 @@
 // Server side component for showing user details
+import { NEXT_AUTH_CONFIG } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
 const getUser = async () => {
-  const session = await getServerSession();
+  const session = await getServerSession(NEXT_AUTH_CONFIG);
   return session;
 };
 
